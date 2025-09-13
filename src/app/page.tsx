@@ -103,7 +103,24 @@ export default function Home() {
     </div>
     */
     <main>
-      <h1>Hello, Vercel + Next.js!</h1>
+      <h1>RelaX Clone for COMP 3005</h1>
+      <h2>By: Stanny Huang</h2>
+
+      <p>This is a clone of the RelaX website built using Next.js and Tailwind CSS.</p>
+      <p>It simulates Relational Algebra queries.</p>
+
+      <p>Note: This is a school project and is not affiliated with the original RelaX website.</p>
+
+      ### Text Box input
+      <textarea
+        className="w-full h-40 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        placeholder="Enter your relational algebra query here..."
+      ></textarea>
+
+      <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+        Submit
+      </button>
+      
     </main>
   );
 }
