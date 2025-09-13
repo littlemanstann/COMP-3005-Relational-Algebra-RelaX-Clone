@@ -15,9 +15,6 @@ export default function Home() {
   };
 
   return (
-    names = ["John", "Alice", "Bob"]
-    ages = [32, 28, 45]
-    
     <main>
       <h1>RelaX Clone for COMP 3005</h1>
       <h2>By: Stanny Huang</h2>
@@ -28,6 +25,8 @@ export default function Home() {
       <p>Note: This is a school project and is not affiliated with the original RelaX website.</p>
 
       <h3>Relation:</h3>
+      <h1 className="text-2xl font-bold mb-6">Employee Data</h1>
+      <EmployeeChart/> // yes, this is how you embed the chart
 
       ### Text Box input
       <textarea

@@ -40,5 +40,5 @@ export default function EmployeeChart() {
     },
   };
 
-  return <Bar data={data} options={options} />;
+  return <Bar data={data}  />;
 }
