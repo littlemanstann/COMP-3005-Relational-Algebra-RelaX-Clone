@@ -1,6 +1,5 @@
 "use client"; // enables client-side interactivity
 import Image from "next/image";
-import EmployeeChart from "./chart";
 import { useState } from "react";
 import { Bar } from "react-chartjs-2";
 
@@ -26,7 +25,7 @@ export default function Home() {
 
       <h3>Relation:</h3>
       <h1 className="text-2xl font-bold mb-6">Employee Data</h1>
-      <EmployeeChart/>
+      <div id="table-container"></div>
 
       ### Text Box input
       <textarea

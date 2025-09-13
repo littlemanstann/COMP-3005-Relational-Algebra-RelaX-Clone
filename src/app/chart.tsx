@@ -1,44 +1,39 @@
-"use client";
+interface Tuple {
+    id: number;
+    name: string;
+    age: number;
+}
 
-import { Bar } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
+const relation: Tuple[] = [
+    { id: 1, name: "Alice", age: 25 },
+    { id: 2, name: "Bob", age: 30 },
+    { id: 3, name: "Charlie", age: 22 },
+];
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+const container = document.getElementById("table-container");
 
-export default function EmployeeChart() {
-  // Example table data
-  const employees = [
-    { EID: "E1", Name: "John", Age: 32 },
-    { EID: "E2", Name: "Alice", Age: 28 },
-    { EID: "E3", Name: "Bob", Age: 45 },
-  ];
+if (container) {
+    const table = document.createElement("table");
+    const header = document.createElement("tr");
 
-  const data = {
-    labels: employees.map((e) => e.Name),
-    datasets: [
-      {
-        label: "Age",
-        data: employees.map((e) => e.Age),
-        backgroundColor: "rgba(59, 130, 246, 0.7)", // Tailwind blue-500
-      },
-    ],
-  };
+    // Create header
+    ["ID", "Name", "Age"].forEach(text => {
+        const th = document.createElement("th");
+        th.textContent = text;
+        header.appendChild(th);
+    });
+    table.appendChild(header);
 
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: { position: "top" },
-      title: { display: true, text: "Employee Ages" },
-    },
-  };
+    // Create rows in the table
+    relation.forEach(tuple => {
+        const tr = document.createElement("tr");
+        Object.values(tuple).forEach(value => {
+            const td = document.createElement("td");
+            td.textContent = value.toString();
+            tr.appendChild(td);
+        });
+        table.appendChild(tr);
+    });
 
-  return <Bar data={data}  />;
+    container.appendChild(table);
 }
